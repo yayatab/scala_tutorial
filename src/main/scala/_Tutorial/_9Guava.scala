@@ -1,11 +1,11 @@
 package _Tutorial
-import com.google.common;
+import com.google.common.base.Joiner;
 
 
 object _9Guava extends App {
 
-  val joiner: Joiner = Joiner.on("; ").skipNulls();
+  val joiner = Joiner.on("; ").skipNulls();
 
-  return joiner.join("Harry", null, "Ron", "Hermione");
+  print(joiner.join("Harry", null, "Ron", "Hermione"));
 
 }
