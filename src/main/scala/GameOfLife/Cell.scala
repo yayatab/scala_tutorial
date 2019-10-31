@@ -5,6 +5,13 @@ package GameOfLife
 abstract class Cell(rep: Char) {
   private def stat: Char = rep
 
+  def shouldBeAlive(myPos: (Int, Int), others: Array[(Int, Int)]): Boolean = {
+    //must be a better way
+    val tmp: List[Point] = List[Point]()
+    others.foreach(t => tmp.appended(t))
+    shouldBeAlive(new Point(myPos), tmp.toArray)
+  }
+
   //we assume that the cell is dead from the start
   def shouldBeAlive(myPos: Point, others: Array[Point]): Boolean = {
     var liveCount = 0
