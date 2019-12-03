@@ -19,6 +19,16 @@ object _11Loops  extends App {
   print(z.length)
 
 
+  val xx = new ListBuffer[Int]()
+  Array(1,2,3,5,7,9).foreach(xx.append)
+  for (x <- xx) {
+    if (x % 2 == 0) {
+      xx.append(11)
+    }
+    print(x + ",")
+  }
+
+
 
 
 
